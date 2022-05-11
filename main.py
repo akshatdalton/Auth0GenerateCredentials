@@ -15,7 +15,7 @@ GRANT_TYPE = ""
 
 class AcessTokenGenerator(object):
     def __init__(self) -> None:
-        self._cache = Cache()
+        self._cache = Cache("/tmp/diskcache")
 
     def get_access_token(self):
         with Cache(self._cache.directory) as reference:
